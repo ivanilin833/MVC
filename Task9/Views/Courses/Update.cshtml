@@ -1,0 +1,26 @@
+﻿@using Task9.Domain
+@model Course
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <div class="validation" asp-validation-summary="All"></div>
+            <label>Введите новое название курса</label><br />
+            <input asp-for="Name" type="text" name="nameCourse" /><br />
+            <span asp-validation-for="Name"></span>
+            <input type="submit" value="Сохранить изменение" />
+        </form>
+        <div>
+
+            <button class="test">@Html.ActionLink("Удалить курс", "Delete", "Courses", new { id = Model.CourseId })  </button>
+        </div>
+    </div>
+    <script src="~/js/bundleValidation.min.js" asp-append-version="true"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@using Task9.Domain
+@model Student
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        Добавление нового студента
+        <form method="post">
+            <div asp-validation-summary="All" class="validator"></div>
+            <div class="form-group">
+                <label>Введите имя студента</label><br />
+                <input type="text" name="firstName" asp-for="FirstName" class="form-control" /><br />
+                <span asp-validation-for="FirstName" class="text-danger"></span><br />
+            </div>
+            <div class="form-group">
+                <label>Введите фамилию студента</label><br />
+                <input type="text" name="lastName" asp-for="LastName" class="form-control" /><br />
+                <span asp-validation-for="LastName" class="text-danger"></span><br />
+                <input type="submit" value="Сохранить изменение" />
+            </div>
+        </form>
+    </div>
+    <script src="~/js/bundleValidation.min.js" asp-append-version="true"></script>
+</body>
+</html>

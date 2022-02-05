@@ -1,0 +1,25 @@
+﻿@using Task9.Domain
+@model Group
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        Добавление новой группы
+        <form method="post">
+            <div asp-validation-summary="All" class="validator"></div>
+            <div class="form-group">
+                <label>Введите название группы</label><br />
+                <input type="text" name="nameGroup" asp-for="Name" class="form-control" /><br />
+                <span asp-validation-for="Name" class="text-danger"></span><br />
+                <input type="submit" value="Сохранить изменение" />
+            </div>
+        </form>
+    </div>
+    <script src="~/js/bundleValidation.min.js" asp-append-version="true"></script>
+</body>
+</html>
+

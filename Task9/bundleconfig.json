@@ -1,0 +1,25 @@
+[
+  {
+    "outputFileName": "wwwroot/js/bundleValidation.js",
+    "inputFiles": [
+      "wwwroot/js/jquery.min.js",
+      "wwwroot/js/jquery.validate.min.js",
+      "wwwroot/js/jquery.validate.unobtrusive.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bundleStyle.css",
+    "inputFiles": [
+      "wwwroot/css/bootstrap.min.css",
+      "wwwroot/css/Style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bundleJs.js",
+    "inputFiles": [
+      "wwwroot/js/jquery.min.js",
+      "wwwroot/js/bootstrap.min.js",
+      "wwwroot/js/JavaScript.js"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+﻿@using Task9.Domain
+@model Student
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <div class="validation" asp-validation-summary="All"></div>
+            <label>Введите новое имя студента</label><br />
+            <input asp-for="FirstName" type="text" name="firstName" /><br />
+            <span asp-validation-for="FirstName"></span>
+            <label>Введите новую фамилию студента</label><br />
+            <input asp-for="LastName" type="text" name="lastName" /><br />
+            <span asp-validation-for="LastName"></span>
+            <input type="submit" value="Сохранить изменение" />
+        </form>
+        <div>
+
+            <button class="test">@Html.ActionLink("Удалить студента", "Delete", "Student", new { id = Model.StudentId })  </button>
+        </div>
+    </div>
+    <script src="~/js/bundleValidation.min.js" asp-append-version="true"></script>
+</body>
+</html>
+

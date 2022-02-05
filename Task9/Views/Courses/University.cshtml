@@ -1,0 +1,61 @@
+﻿@using Task9.Domain
+@model IEnumerable<Course>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bundleStyle.min.css" asp-append-version="true" />
+</head>
+<body>
+    @foreach (var cours in Model)
+    {
+<div class="container">
+    <div class="dropdown">
+        <div>
+            <button class="test">@Html.ActionLink("Редактировать  курс", "Update", "Courses", new { id = cours.CourseId }) </button>
+        </div>
+
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            @cours.Name
+            <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+            @foreach (var group in cours.Group)
+            {
+
+<li class="dropdown-submenu">
+    <button class="test">@Html.ActionLink("Редактировать  группу", "Update", "Group", new { id = group.GroupId })  </button>
+    <a class="test">@group.Name<span class="caret"></span></a>
+
+    <ul class="dropdown-menu">
+        @foreach (var student in group.Students)
+        {
+<li class="dropdown-submenu">
+    <button class="test">@Html.ActionLink("Редактировать данные студента", "Update", "Student", new { id = student.StudentId })  </button>
+    <a class="test"> @student.FirstName @student.LastName</a>
+</li>}
+
+        <div>
+            <button class="test">@Html.ActionLink("Добавить студента", "Add", "Student", new { id = group.GroupId }) </button>
+        </div>
+    </ul>
+</li>                }
+
+            <div>
+                <button class="test">@Html.ActionLink("Добавить группу", "Add", "Group", new { id = cours.CourseId }) </button>
+            </div>
+
+        </ul>
+    </div>
+
+</div>            }
+    <div class="container">
+        <button class="test">@Html.ActionLink("Добавить курс", "Add", "Courses") </button>
+    </div>
+    <script src="js/bundleJs.min.js" asp-append-version="true"></script>
+
+</body>
+</html>
+
+
